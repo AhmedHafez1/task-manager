@@ -1,5 +1,5 @@
-import { Task } from '@prisma/client';
-import prisma from '../data/prisma';
+import { Task } from "@prisma/client";
+import prisma from "../data/prisma";
 
 export const getTasks = async () => {
   const tasks = await prisma.task.findMany();
@@ -23,5 +23,29 @@ export const updateTask = async (id: number, data: Task) => {
 
 export const deleteTask = async (id: number) => {
   const task = await prisma.task.delete({ where: { id } });
+  return task;
+};
+
+export const completeTask = async (id: number) => {
+  const task = await prisma.task.update({
+    where: { id },
+    data: { completed: true },
+  });
+  return task;
+};
+
+export const uncompleteTask = async (id: number) => {
+  const task = await prisma.task.update({
+    where: { id },
+    data: { completed: false },
+  });
+  return task;
+};
+
+export const assignTask = async (id: number, assigneeId: number) => {
+  const task = await prisma.task.update({
+    where: { id },
+    data: { assigneeId },
+  });
   return task;
 };
