@@ -1,5 +1,5 @@
-import { Task } from "@prisma/client";
-import prisma from "../data/prisma";
+import { Task } from '@prisma/client';
+import prisma from '../data/prisma';
 
 export const getTasks = async () => {
   const tasks = await prisma.task.findMany();
@@ -7,7 +7,10 @@ export const getTasks = async () => {
 };
 
 export const getTask = async (id: number) => {
-  const task = await prisma.task.findUnique({ where: { id } });
+  const task = await prisma.task.findUnique({
+    where: { id },
+    include: { assignee: true, project: true },
+  });
   return task;
 };
 
@@ -34,7 +37,7 @@ export const completeTask = async (id: number) => {
   return task;
 };
 
-export const uncompleteTask = async (id: number) => {
+export const unCompleteTask = async (id: number) => {
   const task = await prisma.task.update({
     where: { id },
     data: { completed: false },
@@ -45,7 +48,7 @@ export const uncompleteTask = async (id: number) => {
 export const assignTask = async (id: number, assigneeId: number) => {
   const task = await prisma.task.update({
     where: { id },
-    data: { assigneeId },
+    data: {},
   });
   return task;
 };

@@ -1,5 +1,5 @@
 import { assignTask } from './../services/tasks.service';
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 import {
   getTasks,
   createTask,
@@ -7,8 +7,8 @@ import {
   getTask,
   updateTask,
   completeTask,
-  uncompleteTask as unCompleteTask,
-} from "../services/tasks.service";
+  unCompleteTask as unCompleteTask,
+} from '../services/tasks.service';
 
 export const createTaskController = async (req: Request, res: Response) => {
   const task = await createTask(req.body);
@@ -46,6 +46,9 @@ export const unCompleteTaskController = async (req: Request, res: Response) => {
 };
 
 export const assignTaskController = async (req: Request, res: Response) => {
-  const task = await assignTask(parseInt(req.params.id), parseInt(req.params.assigneeId));
+  const task = await assignTask(
+    parseInt(req.params.id),
+    parseInt(req.params.assigneeId)
+  );
   res.status(200).json(task);
 };
