@@ -8,7 +8,7 @@ export const getTasks = async () => {
 
 export const getTask = async (id: number) => {
   const task = await prisma.task.findUnique({ where: { id } });
-  return;
+  return task;
 };
 
 export const createTask = async (data: Task) => {

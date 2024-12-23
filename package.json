@@ -14,11 +14,13 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "^6.1.0",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "task-manager": "file:"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
     "nodemon": "^3.1.9",
