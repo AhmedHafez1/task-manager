@@ -9,7 +9,10 @@ export const getTasks = async () => {
 export const getTask = async (id: number) => {
   const task = await prisma.task.findUnique({
     where: { id },
-    include: { assignee: true, project: true },
+    include: {
+      assignee: { select: { name: true, email: true, id: true } },
+      project: true,
+    },
   });
   return task;
 };
@@ -48,7 +51,7 @@ export const unCompleteTask = async (id: number) => {
 export const assignTask = async (id: number, assigneeId: number) => {
   const task = await prisma.task.update({
     where: { id },
-    data: {},
+    data: { assigneeId },
   });
   return task;
 };
