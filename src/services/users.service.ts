@@ -6,7 +6,7 @@ import { User } from "../models/user.model";
 export const signup = async (user: User) => {
   const hashedPassword = await bcrypt.hash(user.password, 10);
   const newUser = await prisma.user.create({
-    data: { ...user, password: hashedPassword },
+    data: { email: user.email, name: user.name, password: hashedPassword },
   });
   const token = sign(
     { id: newUser.id, email: newUser.email },
