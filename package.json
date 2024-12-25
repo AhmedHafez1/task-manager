@@ -21,12 +21,15 @@
     "express-async-errors": "^3.1.1",
     "ioredis": "^5.4.2",
     "jsonwebtoken": "^9.0.2",
-    "task-manager": "file:"
+    "morgan": "^1.10.0",
+    "task-manager": "file:",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.7",
+    "@types/morgan": "^1.9.9",
     "@types/node": "^22.10.2",
     "nodemon": "^3.1.9",
     "prisma": "^6.1.0",
