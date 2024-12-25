@@ -16,7 +16,7 @@ export const createTaskController = async (req: Request, res: Response) => {
 };
 
 export const getTasksController = async (req: Request, res: Response) => {
-  const tasks = await getTasks();
+  const tasks = await getTasks(req.url);
   res.status(200).json(tasks);
 };
 
