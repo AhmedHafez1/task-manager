@@ -1,8 +1,8 @@
+import 'express-async-errors';
 import express from 'express';
 import tasksRoute from './routes/tasks.route';
 import usersRoute from './routes/users.route';
 import dotenv from 'dotenv';
-import 'express-async-errors';
 import errorMiddleware from './middleware/error.middleware';
 import { AppError } from './middleware/app.error';
 
