@@ -4,7 +4,7 @@ import redisClient from './redis.service';
 
 export const getTasks = async (url: string) => {
   const tasks = await prisma.task.findMany();
-  await redisClient.setex(url, 60, JSON.stringify(tasks));
+  // await redisClient.setex(url, 60, JSON.stringify(tasks));
   return tasks;
 };
 

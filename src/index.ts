@@ -1,12 +1,12 @@
 import 'express-async-errors';
-import './services/redis.service';
+// import './services/redis.service';
 import express from 'express';
 import tasksRoute from './routes/tasks.route';
 import usersRoute from './routes/users.route';
 import dotenv from 'dotenv';
 import errorMiddleware from './middleware/error.middleware';
 import { AppError } from './middleware/app.error';
-import cacheMiddleware from './middleware/caching.middlware';
+import cacheMiddleware from './middleware/caching.middleware';
 import { loggerMiddleware } from './middleware/logger.middleware';
 
 dotenv.config();
@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(loggerMiddleware);
-app.use(cacheMiddleware);
+// app.use(cacheMiddleware);
 
 app.get('/', (req, res) => {
   res.send('App is running');
