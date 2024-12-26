@@ -12,3 +12,6 @@
 2024-12-26T05:37:53.820Z http: ::1 - - [26/Dec/2024:05:37:53 +0000] "PATCH /tasks/8/complete HTTP/1.1" 200 215 "-" "PostmanRuntime/7.43.0"
 2024-12-26T05:37:59.726Z http: ::1 - - [26/Dec/2024:05:37:59 +0000] "PATCH /tasks/17/complete HTTP/1.1" 200 209 "-" "PostmanRuntime/7.43.0"
 2024-12-26T05:38:07.713Z http: ::1 - - [26/Dec/2024:05:38:07 +0000] "PATCH /tasks/1/complete HTTP/1.1" 200 188 "-" "PostmanRuntime/7.43.0"
+2024-12-26T06:10:14.111Z http: ::1 - - [26/Dec/2024:06:10:14 +0000] "GET / HTTP/1.1" 200 14 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+2024-12-26T06:10:16.284Z http: ::1 - - [26/Dec/2024:06:10:16 +0000] "GET /favicon.ico HTTP/1.1" 404 42 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+2024-12-26T06:10:19.674Z http: ::1 - - [26/Dec/2024:06:10:19 +0000] "GET /tasks HTTP/1.1" 200 4183 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
