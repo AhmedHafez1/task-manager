@@ -3,7 +3,9 @@ import prisma from '../data/prisma';
 import redisClient from './redis.service';
 
 export const getTasks = async (url: string) => {
-  const tasks = await prisma.task.findMany();
+  const tasks = await prisma.task.findMany(
+    { include: { assignee: { select: { name: true, email: true, id: true } } } , take: 5, skip: 12 }
+  );
   // await redisClient.setex(url, 60, JSON.stringify(tasks));
   return tasks;
 };
